@@ -20,9 +20,9 @@ public class TicTacToeTest{
 		TicTacToe game = new TicTacToe();
 		
 		game.player = true;
-		assertEquals("If player if true then setMarker should return 1", 1, setMarker());
+		assertEquals("If player if true then setMarker should return 1", 1, game.setMarker());
 
 		game.player = false;
-		assertEquals("If player if fasle then setMarker should return 0", 0, setMarker());
+		assertEquals("If player if false then setMarker should return 0", 0, game.setMarker());
 	}
 }
