@@ -3,9 +3,9 @@ package is.ru.tictactoe;
 import java.util.Scanner;
 
 public class TicTacToe{
-	private boolean player;
-	private int[][] table;
-	private int movesLeft;
+	public boolean player;
+	public int[][] table;
+	public int movesLeft;
 
 	//Constructor
 	public TicTacToe(){

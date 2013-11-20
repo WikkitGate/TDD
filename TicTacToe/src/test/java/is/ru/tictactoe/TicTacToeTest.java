@@ -6,8 +6,13 @@ import org.junit.Test;
 
 public class TicTacToeTest{
 	@Test
-	public void makeMoveTest(){
+	public void genTableTest(){
 		TicTacToe game = new TicTacToe();
-		assertEquals(false, game.makeMove(10));
+		game.genTable();
+		for(int row = 0; row < 3; row++){
+			for(int column = 0; column < 3; column++){
+				assertEquals(100, game.table[row][column]);
+			}
+		}
 	}
 }
