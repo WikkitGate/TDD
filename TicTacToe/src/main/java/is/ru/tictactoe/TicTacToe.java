@@ -16,7 +16,7 @@ public class TicTacToe{
 	}
 
 	//Generates a new table
-	private void genTable(){
+	public void genTable(){
 		int counter = 1;
 		for(int row = 0; row < 3; row++){
 			for(int column = 0; column < 3; column++){
@@ -28,14 +28,14 @@ public class TicTacToe{
 	}
 
 	//Returns the number player should place into this.table
-	private int setMarker(){
+	public int setMarker(){
 		if(this.player)	{ return 1; }//X marks 1
 		else			{ return 0; }//O marks 0
 	}
 
 	//Tries to alter the players chosen square
 	//Returns false if occupied or out of bounds
-	private boolean makeMove(int chosenSquare){
+	public boolean makeMove(int chosenSquare){
 		int counter = 1;
 		int marker = this.setMarker();
 
@@ -66,7 +66,7 @@ public class TicTacToe{
 	//Returns true if winner is found
 	//If the sum of three squares 3 then the winner is X
 	//if the sum if 0 the the winner is O
-	private boolean findWinner(){
+	public boolean findWinner(){
 		//check columns for a winner
 		for(int column = 0; column < 3; column++){
 			if(this.table[0][column] + this.table[1][column] + this.table[2][column] == 3){
@@ -104,7 +104,7 @@ public class TicTacToe{
 	}
 
 	//Swaps the value of this.player and returns his character('X', 'O')
-	private char swapPlayer(){
+	public char swapPlayer(){
 		if(this.player){	this.player = false; return 'O';}
 		else{				this.player = true; return 'X';}
 	}
