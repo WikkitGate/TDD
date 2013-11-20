@@ -11,7 +11,7 @@ public class TicTacToeTest{
 		game.genTable();
 		for(int row = 0; row < 3; row++){
 			for(int column = 0; column < 3; column++){
-				assertEquals(100, game.table[row][column]);
+				assertEquals("Default value of squares should be 100"; 100, game.table[row][column]);
 			}
 		}
 	}
