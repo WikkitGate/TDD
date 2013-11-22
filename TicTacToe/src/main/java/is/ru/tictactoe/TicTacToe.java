@@ -3,12 +3,12 @@ package is.ru.tictactoe;
 import java.util.Scanner;
 
 public class TicTacToe{
-	public boolean player;
-	public int[][] table;
-	public int movesLeft;
+	protected boolean player;
+	protected int[][] table;
+	protected int movesLeft;
 
 	//Constructor
-	public TicTacToe(){
+	protected TicTacToe(){
 		this.player = true; //X always starts
 		this.table = new int[3][3];
 		this.movesLeft = 9;
@@ -16,7 +16,7 @@ public class TicTacToe{
 	}
 
 	//Generates a new table
-	public void genTable(){
+	protected void genTable(){
 		int counter = 1;
 		for(int row = 0; row < 3; row++){
 			for(int column = 0; column < 3; column++){
@@ -28,14 +28,14 @@ public class TicTacToe{
 	}
 
 	//Returns the number player should place into this.table
-	public int setMarker(){
+	protected int setMarker(){
 		if(this.player)	{ return 1; }//X marks 1
 		else			{ return 0; }//O marks 0
 	}
 
 	//Tries to alter the players chosen square
 	//Returns false if occupied or out of bounds
-	public boolean makeMove(int chosenSquare){
+	protected boolean makeMove(int chosenSquare){
 		int counter = 1;
 		int marker = this.setMarker();
 
@@ -66,7 +66,7 @@ public class TicTacToe{
 	//Returns true if winner is found
 	//If the sum of three squares 3 then the winner is X
 	//if the sum if 0 the the winner is O
-	public boolean findWinner(){
+	protected boolean findWinner(){
 		//check columns for a winner
 		for(int column = 0; column < 3; column++){
 			if(this.table[0][column] + this.table[1][column] + this.table[2][column] == 3){
@@ -104,13 +104,13 @@ public class TicTacToe{
 	}
 
 	//Swaps the value of this.player and returns his character('X', 'O')
-	public char swapPlayer(){
+	protected char swapPlayer(){
 		if(this.player){	this.player = false; return 'O';}
 		else{				this.player = true; return 'X';}
 	}
 
 	//Handles the general gameplay
-	public void playGame(){
+	protected void playGame(){
 		Scanner input;
 		int chosenSquare;
 
@@ -155,7 +155,7 @@ public class TicTacToe{
 	}
 
 	//Prints the table to terminal
-	public void printTable(){
+	protected void printTable(){
 		System.out.println("-------------");
 		int counter = 1;
 
